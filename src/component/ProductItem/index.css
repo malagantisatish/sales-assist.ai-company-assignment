@@ -1,0 +1,93 @@
+.product-item{
+    width: 100%;
+    height: Hug (483.43px);
+    top: 359px;
+    left: 32px;
+    gap: 32px;
+
+
+}
+
+.product-details-container{
+    width:100%;
+}
+
+.product-image{
+    width: 288.39px;
+    height: 432.53px;
+    top: -29.66px;
+    left: -7.54px;
+    border-radius: 6.59px, 6.59px, 0px, 0px;
+}
+
+.title{
+    font-family: Encode Sans;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color:#E5DFD9;
+}
+
+.cost-details{
+    width:50%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cost-add-cart-container{
+    display:flex;
+    width:70%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selling-price{
+    font-family: Encode Sans;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0px;
+    text-align: right;
+    color:#E5DFD9;
+
+}
+
+.actual-price{
+    color: #E5DFD9;
+    font-family: Encode Sans;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: right;
+    text-decoration: line-through;
+
+
+}
+
+.discount{
+    font-family: Encode Sans;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+    font-family: Raleway;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#2FC14F;
+}
+
+.cart-icon{
+    width: 19.93px;
+    height: 20.39px;
+    top: 451.82px;
+    left: 253.39px;
+
+}
