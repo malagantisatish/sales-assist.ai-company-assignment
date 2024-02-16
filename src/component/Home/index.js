@@ -1,4 +1,6 @@
-import {Component} from "react"
+import {Component} from "react";
+
+import {TailSpin} from "react-loader-spinner"
 import ProductItem from "../ProductItem"
 import "./index.css"
 
@@ -18,9 +20,16 @@ const optionsList = [
     
 ]
 
+const apiStatusConstants = {
+    initial: "INITIAL",
+    inProgress: "IN_PROGRESS",
+    success: "SUCCESS",
+    failure: "FAILURE",
+  };
+
 
 class Home extends Component{
-    state={category:"electronics",searchInput:"",productList:[]}
+    state={category:"electronics",searchInput:"",productList:[],status:apiStatusConstants.initial}
     componentDidMount(){
         this.getTheData()
     }
@@ -28,11 +37,12 @@ class Home extends Component{
     getTheData=async()=>{
         const {category,serachInput}=this.state
         const url = `https://fakestoreapi.com/products/category/${category}?search_q=${serachInput}`
+        this.setState({status:apiStatusConstants.inProgress})
     
         const response = await fetch(url);
         if (response.ok){
             const data = await response.json()
-            this.setState({productList:data})
+            this.setState({productList:data,status:apiStatusConstants.success})
         }
 
     }
@@ -45,6 +55,14 @@ class Home extends Component{
     getTheSearchData=event=>{
         this.setState({searchInput:event.target.value},this.getTheData)
     }
+
+    
+        renderTheLoader = () => (
+            <div testid="list-loader" className="loader-container">
+              <TailSpin type="Oval" color="#F7931E" height={50} width={50} />
+            </div>
+          )
+    
 
 
     renderTheSearchBar=()=>{
@@ -89,12 +107,25 @@ class Home extends Component{
         )
     }
 
+    renderTheProdctsView = () => {
+        const {status} = this.state
+        switch (status) {
+          case apiStatusConstants.inProgress:
+            return this.renderTheLoader()
+          case apiStatusConstants.success:
+            return this.renderTheProductList()
+          default:
+            return null
+        }
+      }
+
+
+
 
     render(){
-        const {searchInput,category,productList} = this.state
         return <div className="home-page-container">
             {this.renderTheNavbar()}
-            {this.renderTheProductList()}
+            {this.renderTheProdctsView()}
         </div>
     }
 }

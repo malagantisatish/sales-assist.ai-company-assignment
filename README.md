@@ -68,3 +68,36 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Developed the TANN TRIM WEBSITE  single page application
+
+### Navbar
+
+In the Navbar user can see the Logo of the website and then he can see and select the categorys such as
+
+    const itemsCategoryList = [
+        {id:"electronics",category:"Electronics"},
+        {id:"men's clothing",category:"Men's Clothing"},
+        {id:"women's clothing",category:"Women's clothing"},
+        {id:"jewelery",category:"Jewelery"}
+    ]
+when user select the category the respected data is shown to user 
+
+and also user can see the Search bar ,User profile ,Bookmark and shopping Cart
+
+### Used mock API's
+Used mock API's for shwoing the data on the website 
+### Used urls
+ For fetching data i used this url https://fakestoreapi.com/products/category/${category}?search_q=${serachInput}
+ when ever the user changes the category then respected category product are showing to user on the webiste
+
+### React Loader
+
+when the data is fetching then user can experience the loader the website after the promise object is resolve user can see the data
+
+this scenario was handled using switch case 
+
+### For responsiveness
+
+For responsiveness i used css flex property with display and grid values 
+
